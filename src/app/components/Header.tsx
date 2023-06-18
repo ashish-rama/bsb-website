@@ -177,7 +177,7 @@ export function Popovers() {
                           width="429.00000000000006"
                           height="56.76384485528456"
                           viewBox="0 0 370.3333333333333 49.00126778105761"
-                          className="css-1j8o68f h-6 w-auto"
+                          className="css-1j8o68f h-8 w-auto"
                         >
                           <defs id="SvgjsDefs6137"></defs>
                           <g

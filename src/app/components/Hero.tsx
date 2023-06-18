@@ -4,7 +4,7 @@ import { Container } from './Containter';
 
 export function Hero() {
   return (
-    <div className="relative">
+    <div className="relative mt-6 md:mt-40">
       <Blur />
       <Container>
         <div className="relative ml-auto">
