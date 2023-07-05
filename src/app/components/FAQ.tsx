@@ -61,8 +61,8 @@ const faq = [
     answer: (
       <>
         We're thrilled that you're interested in joining Buyside Bogey! Simply
-        fill in your details on our waitlist form, and we'll notify you when the
-        platform is ready.
+        fill in your details on our waitlist form, and we{"'"}ll notify you when
+        the platform is ready.
       </>
     ),
   },

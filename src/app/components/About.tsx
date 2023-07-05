@@ -19,11 +19,11 @@ export function About() {
                       Navigate the Earnings Season with Confidence
                     </h2>
                     <p className="mt-4 text-lg font-normal text-slate-500">
-                      No more time wasted on sorting through cluttered inboxes
-                      or making frantic phone calls. We bring together all the
-                      critical information you need in one intuitive dashboard.
-                      You'll always have a finger on the pulse of the market
-                      sentiment, giving you an edge over the competition.
+                      No more last-minute email surveys and analyst calls. We
+                      bring together all the critical information you need in
+                      one intuitive dashboard. With real-time estimates,
+                      performance tracking, and rewards for accuracy, you{"'"}ll
+                      always have a pulse on buyside sentiment.
                     </p>
                     <div className="mt-8 mb-8">
                       <a href="#features">
