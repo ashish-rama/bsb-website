@@ -10,11 +10,11 @@ export function CTA() {
         <div className="relative">
           <div className="mt-6 m-auto space-y-8 md:w-8/12 lg:w-7/12">
             <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">
-              Still reading? You must really like us. Let's make it official.
+              Still with us?
             </h1>
             <p className="text-center text-xl text-gray-600 dark:text-gray-300">
-              Don't get left behind in the sea of emails. Dive into clear
-              insights now.
+              Sign up below and don't get left behind – users will be notified
+              on a rolling basis for onboarding.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <Link
