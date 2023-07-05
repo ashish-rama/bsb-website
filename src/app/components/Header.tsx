@@ -97,6 +97,13 @@ export function Header() {
               <span className="hover:text-slate-700 transition-all">FAQ</span>
             </span>
           </a>
+          <a href="#contact">
+            <span className="inline-flex space-x-1">
+              <span className="hover:text-slate-700 transition-all">
+                Contact
+              </span>
+            </span>
+          </a>
         </div>
 
         <div className="lg:border-r py-4"></div>
@@ -267,6 +274,19 @@ export function Popovers() {
                       aria-hidden="true"
                     >
                       FAQ
+                    </span>
+                  </a>
+                  <a
+                    href="#contact"
+                    onClick={async () => {
+                      close();
+                    }}
+                  >
+                    <span
+                      className="text-slate-700 font-medium inline-block w-full py-4"
+                      aria-hidden="true"
+                    >
+                      Contact
                     </span>
                   </a>
                 </div>
