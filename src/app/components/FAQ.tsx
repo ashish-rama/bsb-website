@@ -8,10 +8,11 @@ const faq = [
     question: <>What is Buyside Bogey?</>,
     answer: (
       <>
-        Buyside Bogey is an intuitive, real-time dashboard that allows hedge
-        fund managers to view and analyze anonymous bogey predictions from
-        across the industry. It's designed to enhance decision-making efficiency
-        by aggregating vital insights in one place.
+        Buyside Bogey is a platform which enables institutional public equities
+        investors and portfolio managers to view and analyze anonymized bogey
+        estimates for various KPIs across their coverage. By aggregating vital
+        insights in one place, we enhance decision-making efficiency to save you
+        time, increase bogey accuracy, and drive better investment decisions.
       </>
     ),
   },
@@ -19,10 +20,10 @@ const faq = [
     question: <>How are the bogey predictions on Buyside Bogey sourced?</>,
     answer: (
       <>
-        The bogey predictions on our platform are collected anonymously from
-        hedge fund managers across the industry. This allows us to provide a
-        broad and comprehensive view of market sentiment while preserving
-        confidentiality.
+        The bogey estimates on our platform are collected on an anonymized basis
+        from portfolio managers across funds industry-wide. This allows us to
+        provide a broad and comprehensive view of market sentiment whilst
+        preserving confidentiality.
       </>
     ),
   },
@@ -30,9 +31,10 @@ const faq = [
     question: <>How real-time are the updates on Buyside Bogey?</>,
     answer: (
       <>
-        Our platform updates in real-time as new bogey predictions are made.
+        Our platform updates in real-time as new bogey estimates are submitted.
         This ensures that you always have the most current and relevant
-        information at your fingertips.
+        information at your fingertips. Our aim is to make stale and outdated
+        bogeys a thing of the past.
       </>
     ),
   },
@@ -40,7 +42,7 @@ const faq = [
     question: <>How does Buyside Bogey ensure the anonymity of its users?</>,
     answer: (
       <>
-        We take privacy and anonymity very seriously. All bogey predictions are
+        We take privacy and anonymity very seriously. All bogey estimates are
         submitted anonymously, and we have robust security measures in place to
         protect the confidentiality of our users.
       </>
@@ -60,9 +62,20 @@ const faq = [
     question: <>How can I join the Buyside Bogey platform?</>,
     answer: (
       <>
-        We're thrilled that you're interested in joining Buyside Bogey! Simply
-        fill in your details on our waitlist form, and we{"'"}ll notify you when
-        the platform is ready.
+        We{"'"}re excited to have you on board! Please sign up for our waitlist
+        as we will be notifying investors shortly on a rolling basis once we
+        begin onboarding users.
+      </>
+    ),
+  },
+  {
+    question: <>How much does Buyside Bogey cost?</>,
+    answer: (
+      <>
+        Buyside Bogey will be free for individual new users as we onboard
+        investors and add additional features + functionality over time. For
+        larger teams or firm-wide inquiries, please contact us directly via our
+        Contact form.
       </>
     ),
   },
@@ -81,9 +94,34 @@ export function FAQ() {
               Frequently asked questions
             </h2>
             <p className="mt-4 text-gray-600 dark:text-gray-300">
-              You can find more specific information about our product, pricing,
-              and support by scheduling a call with us.
+              For more detailed information regarding the Buyside Bogey
+              platform, pricing, or support please contact us directly via our
+              Contact form.
             </p>
+            <div className="mt-8 mb-8">
+              <a href="#contact">
+                <span className="group inline-flex items-center font-semibold text-blue-500 transition hover:text-blue-600">
+                  Contact us
+                  <svg
+                    className="mt-0.5 ml-2 -mr-1 stroke-blue-500 stroke-2 group-hover:stroke-blue-600"
+                    fill="none"
+                    width="11"
+                    height="11"
+                    viewBox="0 0 10 10"
+                    aria-hidden="true"
+                  >
+                    <path
+                      className="opacity-0 transition group-hover:opacity-100"
+                      d="M0 5h7"
+                    ></path>
+                    <path
+                      className="transition group-hover:translate-x-[3px]"
+                      d="M1 1l4 4-4 4"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
           </div>
           <div className="lg:w-7/12">
             <Disclosures />
