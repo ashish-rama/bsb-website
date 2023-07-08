@@ -60,35 +60,37 @@ export function ContactUs() {
 
     if (isValidForm) {
       setButtonText('Sending Message');
-      const res = await fetch('/api/sendgrid', {
-        body: JSON.stringify({
-          email: email,
-          fullname: fullname,
-          subject: subject,
-          message: message,
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
-      });
+      //   const res = await fetch('/api/sendgrid', {
+      //     body: JSON.stringify({
+      //       email: email,
+      //       fullname: fullname,
+      //       subject: subject,
+      //       message: message,
+      //     }),
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //     method: 'POST',
+      //   });
+      const form = e.currentTarget;
+      form.submit();
 
-      const { error } = await res.json();
-      if (error) {
-        console.log(error);
-        setShowSuccessMessage(false);
-        setShowFailureMessage(true);
-        setButtonText('Send Message');
+      //   const { error } = await res.json();
+      //   if (error) {
+      //     console.log(error);
+      //     setShowSuccessMessage(false);
+      //     setShowFailureMessage(true);
+      //     setButtonText('Send Message');
 
-        // Reset form fields
-        setFullname('');
-        setEmail('');
-        setMessage('');
-        setSubject('');
-        return;
-      }
-      setShowSuccessMessage(true);
-      setShowFailureMessage(false);
+      //     // Reset form fields
+      //     setFullname('');
+      //     setEmail('');
+      //     setMessage('');
+      //     setSubject('');
+      //     return;
+      //   }
+      //   setShowSuccessMessage(true);
+      //   setShowFailureMessage(false);
       setButtonText('Send Message');
       // Reset form fields
       setFullname('');
@@ -96,7 +98,7 @@ export function ContactUs() {
       setMessage('');
       setSubject('');
     }
-    console.log(fullname, email, subject, message);
+    // console.log(fullname, email, subject, message);
   };
   return (
     <main className="">
@@ -114,6 +116,8 @@ export function ContactUs() {
         </div>
         <form
           onSubmit={handleSubmit}
+          action="https://formsubmit.co/b16ebd00d10666674de3572675c49af9"
+          method="POST"
           className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
         >
           <h1 className="text-3xl font-bold dark:text-gray-50">
