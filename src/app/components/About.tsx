@@ -15,7 +15,7 @@ export function About() {
                     </span>
                   </div>
                   <div className="mt-5">
-                    <h2 className="text-3xl font-extrabold tracking-tight text-slate-800">
+                    <h2 className="text-3xl font-bold text-zinc-900">
                       Navigate the Earnings Season with Confidence
                     </h2>
                     <p className="mt-4 text-lg font-normal text-slate-500">
@@ -516,39 +516,102 @@ export function About() {
             Features
           </div>
           <h3 className="text-2xl text-center font-bold text-zinc-900 dark:text-white md:text-3xl lg:text-4xl">
-            Discover the Buyside Bogey Difference
+            Accurate, Timely, and Buyside-friendly
           </h3>
-          <div className="relative mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card
-              title="Real-Time Bogey Insights"
-              icon={<BoxIcon />}
+          <div className="relative mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <FeatureCard
+              title="Fully Anonymized & Unbiased"
+              // icon={<BoxIcon />}
               description={
                 <>
-                  Stay up-to-date with live updates of bogey predictions. Get
-                  immediate access to critical insights when they matter most,
-                  allowing for informed decision-making on-the-go.
+                  Share and view estimates with complete data privacy - no
+                  intermediaries, no bias.
                 </>
               }
             />
-            <Card
-              title="Anonymized Industry Perspective"
-              icon={<LightBulbIcon />}
+            <FeatureCard
+              title="Contributor Transparency"
+              // icon={<LightBulbIcon />}
               description={
                 <>
-                  Gain a competitive edge with anonymized predictions from
-                  across the hedge fund industry. Understand market sentiment
-                  and trends while maintaining full confidentiality.
+                  Filter EPS expectations based on investor profiles -
+                  multi-manager vs single-manager, industry verticals, and
+                  analysts vs PMs.
                 </>
               }
             />
-            <Card
-              title="Customizable Dashboard"
-              icon={<ThumbsUpIcon />}
+            <FeatureCard
+              title="Real-Time Estimates"
+              // icon={<ThumbsUpIcon />}
               description={
                 <>
-                  Your unique needs deserve a unique dashboard. Tailor your view
-                  to focus on specific companies or metrics, ensuring you have
-                  the most relevant information at your fingertips.
+                  View estimates in real-time and filter EPS expectations by
+                  submission date - don't worry about stale bogeys or rushing
+                  for last-minute expectations changes.
+                </>
+              }
+            />
+            <FeatureCard
+              title="Minimizing Gamesmanship"
+              // icon={<BoxIcon />}
+              description={
+                <>
+                  After multiple quarters of estimate submissions, filter out
+                  bogeys from submitters who were way off the mark in prior
+                  periods.
+                </>
+              }
+            />
+            <FeatureCard
+              title="Tracking Performance"
+              // icon={<LightBulbIcon />}
+              description={
+                <>
+                  Keep track of your bogeys and market bogeys vs actual results.
+                  Weave bogeys into your models to never miss an update and make
+                  your process as seamless as possible.
+                </>
+              }
+            />
+            <FeatureCard
+              title="Clean, Consistent Alerts"
+              // icon={<ThumbsUpIcon />}
+              description={
+                <>
+                  Receive daily or weekly emails on bogey updates across your
+                  coverage and never be caught off guard. Follow us on Twitter
+                  for daily updates and more.
+                </>
+              }
+            />
+            <FeatureCard
+              title="Get Rewarded for Accuracy"
+              // icon={<BoxIcon />}
+              description={
+                <>
+                  Compete for cash prizes based on bogey accuracy and treat
+                  yourself, on us.
+                </>
+              }
+            />
+            <FeatureCard
+              title="Refer to Earn"
+              // icon={<LightBulbIcon />}
+              description={
+                <>
+                  Refer your friends and colleagues to earn referral bonuses
+                  when they sign up start submitting bogeys.
+                </>
+              }
+            />
+            <FeatureCard
+              title="One Source of Truth"
+              // icon={<ThumbsUpIcon />}
+              description={
+                <>
+                  Don't be confused by mixed or contradictory bogeys from
+                  analysts - refer to Buyside Bogey for the most comprehensive
+                  and transparent expectations.
                 </>
               }
             />
@@ -556,6 +619,23 @@ export function About() {
         </Container>
       </div>
     </>
+  );
+}
+
+function FeatureCard({
+  title,
+  description,
+}: {
+  title: string;
+  description: JSX.Element;
+}) {
+  return (
+    <div className="relative h-full group overflow-hidden border rounded-lg text-left border-scale-500 hover:border-scale-700 bg-white transition shadow-md">
+      <div className="px-8 pb-8 relative flex flex-col h-full pt-8">
+        <h5 className="text-blue-700 text-xl font-semibold">{title}</h5>
+        <span className="mt-3 text-zinc-600 flex-grow">{description}</span>
+      </div>
+    </div>
   );
 }
 
