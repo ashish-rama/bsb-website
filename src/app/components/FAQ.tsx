@@ -99,7 +99,7 @@ export function FAQ() {
               Contact form.
             </p>
             <div className="mt-8 mb-8">
-              <a href="#contact">
+              <a href="/contact">
                 <span className="group inline-flex items-center font-semibold text-blue-500 transition hover:text-blue-600">
                   Contact us
                   <svg
