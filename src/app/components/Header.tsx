@@ -82,22 +82,22 @@ export function Header() {
           id="menu-items"
           className="text-slate-500 relative hidden lg:flex justify-center text-base font-medium space-x-8"
         >
-          <a href="#about">
+          <a href="/#about">
             <span className="hover:text-slate-700 transition-all">About</span>
           </a>
-          <a href="#features">
+          <a href="/#features">
             <span className="inline-flex space-x-1">
               <span className="hover:text-slate-700 transition-all">
                 Features
               </span>
             </span>
           </a>
-          <a href="#faq">
+          <a href="/#faq">
             <span className="inline-flex space-x-1">
               <span className="hover:text-slate-700 transition-all">FAQ</span>
             </span>
           </a>
-          <a href="#contact">
+          <a href="/contact">
             <span className="inline-flex space-x-1">
               <span className="hover:text-slate-700 transition-all">
                 Contact
@@ -238,7 +238,7 @@ export function Popovers() {
                 </div>
                 <div id="mobile-nav-items" className="py-3 px-5 text-lg">
                   <a
-                    href="#about"
+                    href="/#about"
                     onClick={async () => {
                       close();
                     }}
@@ -251,7 +251,7 @@ export function Popovers() {
                     </span>
                   </a>
                   <a
-                    href="#features"
+                    href="/#features"
                     onClick={async () => {
                       close();
                     }}
@@ -264,7 +264,7 @@ export function Popovers() {
                     </span>
                   </a>
                   <a
-                    href="#faq"
+                    href="/#faq"
                     onClick={async () => {
                       close();
                     }}
@@ -277,7 +277,7 @@ export function Popovers() {
                     </span>
                   </a>
                   <a
-                    href="#contact"
+                    href="/contact"
                     onClick={async () => {
                       close();
                     }}
