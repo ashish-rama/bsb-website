@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Container } from './Containter';
 
 export function About() {
@@ -57,7 +58,7 @@ export function About() {
                   <div className="relative mt-10 lg:mt-0 w-full rounded-xl border-slate-500/10 border p-0.5 shadow-tremor">
                     <div className="absolute -inset-0.5 bg-gradient-120 from-pink-700 to-blue-700 rounded-lg blur-lg opacity-30"></div>
                     <div className="rounded-[0.62rem] bg-white bg-opacity-50 p-2">
-                      <div className=" ring-tremor shadow-tremor rounded-l-lg overflow-hidden">
+                      {/* <div className=" ring-tremor shadow-tremor rounded-l-lg overflow-hidden">
                         <a
                           href="https://demo.tremor.so"
                           target="_blank"
@@ -501,7 +502,13 @@ export function About() {
                             </defs>
                           </svg>
                         </a>
-                      </div>
+                      </div> */}
+                      <Image
+                        src={'/bsb-dashboard-pic.png'}
+                        alt="buyside bogey dashboard"
+                        width={2000}
+                        height={1400}
+                      ></Image>
                     </div>
                   </div>
                 </div>
