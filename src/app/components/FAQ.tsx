@@ -21,9 +21,9 @@ const faq = [
     answer: (
       <>
         The bogey estimates on our platform are collected on an anonymized basis
-        from portfolio managers across funds industry-wide. This allows us to
-        provide a broad and comprehensive view of market sentiment whilst
-        preserving confidentiality.
+        from analysts and portfolio managers across funds industry-wide. This
+        allows us to provide a broad and comprehensive view of market sentiment
+        whilst preserving confidentiality.
       </>
     ),
   },

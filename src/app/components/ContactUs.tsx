@@ -111,7 +111,7 @@ export function ContactUs() {
             <Balancer>Want to get in touch with our team?</Balancer>
           </h1>
           <p className="text-sm text-gray-700 mt-4 font-light dark:text-gray-200">
-            Fill out the form and we will respond as soon as we can.
+            Complete the below form and we will respond shortly.
           </p>
         </div>
         <form

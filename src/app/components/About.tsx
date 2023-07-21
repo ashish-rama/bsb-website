@@ -527,6 +527,17 @@ export function About() {
           </h3>
           <div className="relative mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
+              title="Real-Time Estimates"
+              // icon={<ThumbsUpIcon />}
+              description={
+                <>
+                  View estimates in real-time and filter EPS expectations by
+                  submission date - don't worry about stale bogeys or rushing
+                  for last-minute expectations changes.
+                </>
+              }
+            />
+            <FeatureCard
               title="Fully Anonymized & Unbiased"
               // icon={<BoxIcon />}
               description={
@@ -544,17 +555,6 @@ export function About() {
                   Filter EPS expectations based on investor profiles -
                   multi-manager vs single-manager, industry verticals, and
                   analysts vs PMs.
-                </>
-              }
-            />
-            <FeatureCard
-              title="Real-Time Estimates"
-              // icon={<ThumbsUpIcon />}
-              description={
-                <>
-                  View estimates in real-time and filter EPS expectations by
-                  submission date - don't worry about stale bogeys or rushing
-                  for last-minute expectations changes.
                 </>
               }
             />
@@ -587,7 +587,7 @@ export function About() {
                 <>
                   Receive daily or weekly emails on bogey updates across your
                   coverage and never be caught off guard. Follow us on Twitter
-                  for daily updates and more.
+                  for regular updates and more.
                 </>
               }
             />

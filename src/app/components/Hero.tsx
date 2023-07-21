@@ -17,7 +17,7 @@ export function Hero() {
             <p className="mt-8 text-xl text-zinc-700 dark:text-zinc-300 leading-8">
               Transform your workflow for earnings events with a real-time,
               intuitive dashboard to help you save time and alpha with improved
-              bogey accuracy.
+              bogey accuracy and timeliness.
             </p>
             <div className="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
               <div>
