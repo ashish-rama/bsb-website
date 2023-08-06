@@ -14,7 +14,7 @@ export function Hero() {
               <br />
               <span className="text-blue-600"> Made Easy</span>
             </h1>
-            <p className="mt-8 text-xl text-zinc-700 dark:text-zinc-300 leading-8">
+            <p className="mt-8 text-xl text-zinc-800 dark:text-zinc-300 leading-8">
               Transform your workflow for earnings events with a real-time,
               intuitive dashboard to help you save time and alpha with improved
               bogey accuracy and timeliness.
@@ -22,9 +22,10 @@ export function Hero() {
             <div className="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
               <div>
                 <Link
-                  href="https://mjkcbhiln9o.typeform.com/to/I6Lo0PRY"
-                  rel="noopener noreferrer"
-                  target="_blank"
+                  // href="https://mjkcbhiln9o.typeform.com/to/I6Lo0PRY"
+                  href="/waitlist"
+                  // rel="noopener noreferrer"
+                  // target="_blank"
                   className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-blue-600 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
                 >
                   <span className="relative text-base font-semibold text-white">

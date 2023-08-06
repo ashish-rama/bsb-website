@@ -111,9 +111,10 @@ export function Header() {
         <div className="hidden lg:flex justify-end">
           <div className="flex space-x-3.5">
             <a
-              href="https://mjkcbhiln9o.typeform.com/to/I6Lo0PRY"
-              rel="noopener noreferrer"
-              target="_blank"
+              // href="https://mjkcbhiln9o.typeform.com/to/I6Lo0PRY"
+              href="/waitlist"
+              // rel="noopener noreferrer"
+              // target="_blank"
               className="w-full bg-blue-600 flex items-center justify-center border border-transparent rounded-lg py-2 px-4 text-base font-medium text-white hover:bg-blue-700 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all"
             >
               Join the Waitlist →
@@ -292,9 +293,10 @@ export function Popovers() {
                 </div>
                 <div className="flex items-center text-center px-5 rounded-b-xl bg-slate-50 py-4 space-x-6">
                   <a
-                    href="https://mjkcbhiln9o.typeform.com/to/I6Lo0PRY"
-                    rel="noopener noreferrer"
-                    target="_blank"
+                    // href="https://mjkcbhiln9o.typeform.com/to/I6Lo0PRY"
+                    href="/waitlist"
+                    // rel="noopener noreferrer"
+                    // target="_blank"
                     className="w-full bg-blue-600 flex items-center justify-center border border-transparent rounded-lg py-2 px-4 text-base font-medium text-white hover:bg-blue-700 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all"
                   >
                     Join the Waitlist →
