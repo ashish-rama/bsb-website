@@ -87,20 +87,32 @@ export function FAQ() {
       <Container>
         <div className="mt-32 flex flex-col gap-12 lg:flex-row">
           <div className="text-center lg:w-5/12 lg:pl-12 lg:text-left">
-            <div className="mb-2.5 text-blue-600 text-sm leading-6 font-semibold tracking-wide uppercase truncate">
+            <div
+              data-aos="fade-down"
+              className="mb-2.5 text-blue-600 text-sm leading-6 font-semibold tracking-wide uppercase truncate"
+            >
               FAQ
             </div>
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-white md:text-3xl lg:text-4xl">
+            <h2
+              data-aos="fade-down"
+              className="text-2xl font-bold text-gray-800 dark:text-white md:text-3xl lg:text-4xl"
+            >
               Frequently asked questions
             </h2>
-            <p className="mt-4 text-gray-600 dark:text-gray-300">
+            <p
+              data-aos="fade-down"
+              className="mt-4 text-gray-600 dark:text-gray-300"
+            >
               For more detailed information regarding the Buyside Bogey
               platform, pricing, or support please contact us directly via our
               Contact form.
             </p>
             <div className="mt-8 mb-8">
               <a href="/contact">
-                <span className="group inline-flex items-center font-semibold text-blue-500 transition hover:text-blue-600">
+                <span
+                  data-aos="fade-down"
+                  className="group inline-flex items-center font-semibold text-blue-500 transition hover:text-blue-600"
+                >
                   Contact us
                   <svg
                     className="mt-0.5 ml-2 -mr-1 stroke-blue-500 stroke-2 group-hover:stroke-blue-600"
@@ -123,7 +135,7 @@ export function FAQ() {
               </a>
             </div>
           </div>
-          <div className="lg:w-7/12">
+          <div data-aos="fade-down" className="lg:w-7/12">
             <Disclosures />
           </div>
         </div>

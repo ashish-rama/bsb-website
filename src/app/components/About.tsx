@@ -11,15 +11,24 @@ export function About() {
               <div className="max-w-xl mx-auto lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
                 <div>
                   <div className="flex items-center text-blue-500 space-x-2">
-                    <span className="rounded-md text-sm font-semibold uppercase tracking-wide">
+                    <span
+                      data-aos="fade-down"
+                      className="rounded-md text-sm font-semibold uppercase tracking-wide"
+                    >
                       Why Buyside Bogey
                     </span>
                   </div>
                   <div className="mt-5">
-                    <h2 className="text-3xl font-bold text-zinc-900">
+                    <h2
+                      data-aos="fade-down"
+                      className="text-3xl font-bold text-zinc-900"
+                    >
                       Navigate the Earnings Season with Confidence
                     </h2>
-                    <p className="mt-4 text-lg font-normal text-slate-500">
+                    <p
+                      data-aos="fade-down"
+                      className="mt-4 text-lg font-normal text-slate-500"
+                    >
                       No more last-minute email surveys and analyst calls. We
                       bring together all the critical information you need in
                       one intuitive dashboard. With real-time estimates,
@@ -28,7 +37,10 @@ export function About() {
                     </p>
                     <div className="mt-8 mb-8">
                       <a href="#features">
-                        <span className="group inline-flex items-center font-semibold text-blue-500 transition hover:text-blue-600">
+                        <span
+                          data-aos="fade-down"
+                          className="group inline-flex items-center font-semibold text-blue-500 transition hover:text-blue-600"
+                        >
                           Read our features
                           <svg
                             className="mt-0.5 ml-2 -mr-1 stroke-blue-500 stroke-2 group-hover:stroke-blue-600"
@@ -54,7 +66,7 @@ export function About() {
                 </div>
               </div>
               <div className="max-w-full mx-auto lg:mx-0 flex items-center justify-end">
-                <div className="mx-auto w-full max-w-xl">
+                <div data-aos="fade-down" className="mx-auto w-full max-w-xl">
                   <div className="relative mt-10 lg:mt-0 w-full rounded-xl border-slate-500/10 border p-0.5 shadow-tremor">
                     <div className="absolute -inset-0.5 bg-gradient-120 from-pink-700 to-blue-700 rounded-lg blur-lg opacity-30"></div>
                     <div className="rounded-[0.62rem] bg-white bg-opacity-50 p-2">
@@ -519,10 +531,16 @@ export function About() {
       </div>
       <div id="features">
         <Container>
-          <div className="mb-2.5 text-center text-blue-600 text-sm leading-6 font-semibold tracking-wide uppercase truncate">
+          <div
+            data-aos="fade-down"
+            className="mb-2.5 text-center text-blue-600 text-sm leading-6 font-semibold tracking-wide uppercase truncate"
+          >
             Features
           </div>
-          <h3 className="text-2xl text-center font-bold text-zinc-900 dark:text-white md:text-3xl lg:text-4xl">
+          <h3
+            data-aos="fade-down"
+            className="text-2xl text-center font-bold text-zinc-900 dark:text-white md:text-3xl lg:text-4xl"
+          >
             Accurate, Timely, and Buyside-friendly
           </h3>
           <div className="relative mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -637,7 +655,10 @@ function FeatureCard({
   description: JSX.Element;
 }) {
   return (
-    <div className="relative h-full group overflow-hidden border rounded-lg text-left border-scale-500 hover:border-scale-700 bg-white transition shadow-md">
+    <div
+      data-aos="fade-down"
+      className="relative h-full group overflow-hidden border rounded-lg text-left border-scale-500 hover:border-scale-700 bg-white transition shadow-md"
+    >
       <div className="px-8 pb-8 relative flex flex-col h-full pt-8">
         <h5 className="text-blue-700 text-xl font-semibold">{title}</h5>
         <span className="mt-3 text-zinc-600 flex-grow">{description}</span>

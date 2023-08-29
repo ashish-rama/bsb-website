@@ -9,17 +9,26 @@ export function Hero() {
       <Container>
         <div className="relative ml-auto">
           <div className="lg:w-2/3 text-center mx-auto">
-            <h1 className="relative text-4xl tracking-tight font-extrabold text-slate-700 sm:text-5xl md:text-6xl z-40">
+            <h1
+              data-aos="fade-down"
+              className="relative text-4xl tracking-tight font-extrabold text-slate-700 sm:text-5xl md:text-6xl z-40"
+            >
               Bogey Management
               <br />
               <span className="text-blue-600"> Made Easy</span>
             </h1>
-            <p className="mt-8 text-xl text-zinc-800 dark:text-zinc-300 leading-8">
+            <p
+              data-aos="fade-down"
+              className="mt-8 text-xl text-zinc-800 dark:text-zinc-300 leading-8"
+            >
               Transform your workflow for earnings events with a real-time,
               intuitive dashboard to help you save time and alpha with improved
               bogey accuracy and timeliness.
             </p>
-            <div className="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
+            <div
+              data-aos="fade-down"
+              className="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6"
+            >
               <div>
                 <Link
                   // href="https://mjkcbhiln9o.typeform.com/to/I6Lo0PRY"
@@ -48,15 +57,18 @@ export function Blur() {
       aria-hidden="true"
       className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
     >
-      <div className="fix-safari-blur blur-[106px] h-56 bg-gradient-to-br from-blue-500 to-blue-400 dark:from-blue-700"></div>
-      <div className="fix-safari-blur blur-[106px] h-32 bg-gradient-to-r from-blue-400 to-blue-300 dark:to-blue-600"></div>
+      <div className="fix-safari-blur blur-[106px] h-56 bg-gradient-to-br from-blue-400 to-blue-300 dark:from-blue-600"></div>
+      <div className="fix-safari-blur blur-[106px] h-32 bg-gradient-to-r from-blue-300 to-blue-200 dark:to-blue-500"></div>
     </div>
   );
 }
 
 function Companies() {
   return (
-    <div className="mt-36 text-center lg:mt-32 md:block hidden">
+    <div
+      data-aos="fade-down"
+      className="mt-36 text-center lg:mt-32 md:block hidden"
+    >
       <span className="uppercase text-sm font-semibold tracking-wider text-gray-800 dark:text-white">
         Join waitlisted users across firms industry-wide
       </span>
