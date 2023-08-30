@@ -4,6 +4,7 @@ import { useFormspark } from '@formspark/use-formspark';
 import { Text, TextInput } from '@tremor/react';
 import React, { useRef, useState } from 'react';
 import { Balancer } from 'react-wrap-balancer';
+import LoadingDots from './LoadingDots/LoadingDots';
 
 export function ContactUs() {
   type ErrorsType = {
@@ -27,6 +28,9 @@ export function ContactUs() {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showFailureMessage, setShowFailureMessage] = useState(false);
 
+  const [formDisabled, setFormDisabled] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
   // Formspark
 
   const FORMSPARK_FORM_ID = 's11ZCZI6';
@@ -42,13 +46,16 @@ export function ContactUs() {
 
     if (isValidForm) {
       try {
+        setIsLoading(true);
+        setFormDisabled(true);
         setButtonText('Sending Message...');
         const result = await submit({ fullname, email, subject, message });
         // console.log(result);
         if (result) {
           setShowSuccessMessage(true);
           setShowFailureMessage(false);
-          setButtonText('Send Message');
+          setIsLoading(false);
+          setButtonText('Message sent');
           // Reset form fields
           setFullname('');
           setEmail('');
@@ -57,12 +64,15 @@ export function ContactUs() {
         } else {
           setShowSuccessMessage(false);
           setShowFailureMessage(true);
+          setIsLoading(false);
           setButtonText('Send Message');
         }
       } catch (error) {
         console.log(error);
         setButtonText('Send Message');
         setShowSuccessMessage(false);
+        setShowFailureMessage(true);
+        setIsLoading(false);
       }
     }
   };
@@ -207,7 +217,7 @@ export function ContactUs() {
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-blue-500 font-light text-gray-500"
           /> */}
           {errors?.fullname && (
-            <p className="text-red-500">Name cannot be empty.</p>
+            <p className="mt-2 text-red-500">Name cannot be empty.</p>
           )}
 
           <label
@@ -314,25 +324,31 @@ export function ContactUs() {
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-blue-500 font-light text-gray-500"
           ></textarea> */}
           {errors?.message && (
-            <p className="text-red-500">Message body cannot be empty.</p>
+            <p className="mt-2 text-red-500">Message body cannot be empty.</p>
           )}
           <div className="flex flex-row items-center justify-start">
             <button
               type="submit"
-              disabled={submitting}
-              className="px-10 mt-8 py-2 bg-blue-600 hover:bg-blue-700 text-gray-50 font-light rounded-md text-lg flex flex-row items-center transition duration-150"
+              disabled={formDisabled}
+              className="w-full h-14 px-10 mt-8 py-2 bg-blue-600 hover:bg-blue-700 text-gray-50 font-light rounded-md text-lg flex flex-row items-center transition duration-150 text-center justify-center"
             >
-              {buttonText}
+              {isLoading ? <LoadingDots color="#ffffff" /> : buttonText}
             </button>
           </div>
           <div className="text-left">
             {showSuccessMessage && (
-              <p className="text-green-500 font-semibold text-sm my-2 mt-4">
+              <p
+                data-aos="fade-down"
+                className="text-green-500 font-semibold text-sm my-2 mt-4"
+              >
                 Thank you! Your message has been delivered.
               </p>
             )}
             {showFailureMessage && (
-              <p className="text-red-500 font-semibold text-sm my-2 mt-4">
+              <p
+                data-aos="fade-down"
+                className="text-red-500 font-semibold text-sm my-2 mt-4"
+              >
                 Oops! Something went wrong, please reload the page and try
                 again.
               </p>
