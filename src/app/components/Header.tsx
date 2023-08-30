@@ -1,6 +1,7 @@
 'use client';
 
 import { Popover } from '@headlessui/react';
+import Link from 'next/link';
 
 export function Header() {
   return (
@@ -42,7 +43,7 @@ export function Header() {
           </a>
         </div>
         <div className="lg:hidden">
-          <a href="/">
+          <Link href="/">
             <div className="-mt-1">
               <svg
                 width="429.00000000000006"
@@ -74,7 +75,7 @@ export function Header() {
                 </g>
               </svg>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="flex items-center space-x-8">
@@ -110,7 +111,7 @@ export function Header() {
 
         <div className="hidden lg:flex justify-end">
           <div className="flex space-x-3.5">
-            <a
+            <Link
               // href="https://mjkcbhiln9o.typeform.com/to/I6Lo0PRY"
               href="/waitlist"
               // rel="noopener noreferrer"
@@ -118,7 +119,7 @@ export function Header() {
               className="w-full bg-blue-600 flex items-center justify-center border border-transparent rounded-lg py-2 px-4 text-base font-medium text-white hover:bg-blue-700 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all"
             >
               Join the Waitlist →
-            </a>
+            </Link>
           </div>
         </div>
       </div>
