@@ -7,7 +7,7 @@ export function About() {
       <div id="about">
         <Container>
           <div className="relative">
-            <div className="lg:mx-auto lg:max-w-7xl lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+            <div className="pt-20 lg:mx-auto lg:max-w-7xl lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
               <div className="max-w-xl mx-auto lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
                 <div>
                   <div className="flex items-center text-blue-500 space-x-2">
