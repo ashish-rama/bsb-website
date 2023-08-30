@@ -533,7 +533,7 @@ export function About() {
         <Container>
           <div
             data-aos="fade-down"
-            className="mb-2.5 text-center text-blue-600 text-sm leading-6 font-semibold tracking-wide uppercase truncate"
+            className="pt-20 mb-2.5 text-center text-blue-600 text-sm leading-6 font-semibold tracking-wide uppercase truncate"
           >
             Features
           </div>

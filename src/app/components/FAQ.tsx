@@ -85,7 +85,7 @@ export function FAQ() {
   return (
     <div className="mt-32" id="faq">
       <Container>
-        <div className="mt-32 flex flex-col gap-12 lg:flex-row">
+        <div className="pt-20 mt-32 flex flex-col gap-12 lg:flex-row">
           <div className="text-center lg:w-5/12 lg:pl-12 lg:text-left">
             <div
               data-aos="fade-down"
