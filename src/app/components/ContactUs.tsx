@@ -1,6 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useFormspark } from '@formspark/use-formspark';
+import { Text, TextInput } from '@tremor/react';
+import React, { useRef, useState } from 'react';
 import { Balancer } from 'react-wrap-balancer';
 
 export function ContactUs() {
@@ -25,6 +27,59 @@ export function ContactUs() {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showFailureMessage, setShowFailureMessage] = useState(false);
 
+  // Formspark
+
+  const FORMSPARK_FORM_ID = 's11ZCZI6';
+
+  const [submit, submitting] = useFormspark({
+    formId: FORMSPARK_FORM_ID,
+  });
+
+  const onSubmit = async (e: any) => {
+    e.preventDefault();
+
+    let isValidForm = handleValidation();
+
+    if (isValidForm) {
+      try {
+        setButtonText('Sending Message...');
+        const result = await submit({ fullname, email, subject, message });
+        // console.log(result);
+        if (result) {
+          setShowSuccessMessage(true);
+          setShowFailureMessage(false);
+          setButtonText('Send Message');
+          // Reset form fields
+          setFullname('');
+          setEmail('');
+          setMessage('');
+          setSubject('');
+        } else {
+          setShowSuccessMessage(false);
+          setShowFailureMessage(true);
+          setButtonText('Send Message');
+        }
+      } catch (error) {
+        console.log(error);
+        setButtonText('Send Message');
+        setShowSuccessMessage(false);
+      }
+    }
+  };
+
+  const [isFocused, setIsFocused] = useState(false);
+
+  const textareaInputRef = useRef<HTMLTextAreaElement>(null);
+
+  const handleFocusChange = (isFocused: boolean) => {
+    if (isFocused === false) {
+      textareaInputRef.current?.blur();
+    } else {
+      textareaInputRef.current?.focus();
+    }
+    setIsFocused(isFocused);
+  };
+
   const handleValidation = () => {
     let tempErrors: { [key: string]: boolean } = {};
     let isValid = true;
@@ -33,7 +88,7 @@ export function ContactUs() {
       tempErrors['fullname'] = true;
       isValid = false;
     }
-    if (email.length <= 0) {
+    if (email.length <= 0 || email.includes('@') === false) {
       tempErrors['email'] = true;
       isValid = false;
     }
@@ -47,7 +102,7 @@ export function ContactUs() {
     }
 
     setErrors({ ...tempErrors });
-    console.log('errors', errors);
+    // console.log('errors', errors);
     return isValid;
   };
 
@@ -103,7 +158,7 @@ export function ContactUs() {
   return (
     <main className="">
       <header className="p-8 grid grid-cols-1 md:grid-cols-2 gap-10 pt-10 lg:px-20 bg-blue-50 dark:bg-blue-900 md:h-96">
-        <div className="mx-auto mb-10 md:mt-20">
+        <div data-aos="fade-down" className="mx-auto mb-10 md:mt-20">
           <div className="mb-2.5 text-blue-600 text-sm leading-6 font-semibold tracking-wide uppercase truncate">
             Contact Us
           </div>
@@ -115,9 +170,11 @@ export function ContactUs() {
           </p>
         </div>
         <form
-          onSubmit={handleSubmit}
-          action="https://formsubmit.co/b16ebd00d10666674de3572675c49af9"
-          method="POST"
+          data-aos="fade-down"
+          onSubmit={onSubmit}
+          // onSubmit={handleSubmit}
+          // action="https://formsubmit.co/b16ebd00d10666674de3572675c49af9"
+          // method="POST"
           className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
         >
           <h1 className="text-3xl font-bold dark:text-gray-50">
@@ -130,7 +187,17 @@ export function ContactUs() {
           >
             Full name <span className="text-red-500 dark:text-gray-50">*</span>
           </label>
-          <input
+          <TextInput
+            type="text"
+            value={fullname}
+            onChange={(e) => {
+              setFullname(e.target.value);
+            }}
+            name="fullname"
+            placeholder=""
+            className="mt-4"
+          />
+          {/* <input
             type="text"
             value={fullname}
             onChange={(e) => {
@@ -138,7 +205,7 @@ export function ContactUs() {
             }}
             name="fullname"
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-blue-500 font-light text-gray-500"
-          />
+          /> */}
           {errors?.fullname && (
             <p className="text-red-500">Name cannot be empty.</p>
           )}
@@ -147,9 +214,19 @@ export function ContactUs() {
             htmlFor="email"
             className="text-gray-500 font-light mt-4 dark:text-gray-50"
           >
-            E-mail <span className="text-red-500">*</span>
+            E-mail <span className="mt-2 text-red-500">*</span>
           </label>
-          <input
+          <TextInput
+            type="text"
+            name="email"
+            value={email}
+            placeholder=""
+            className="mt-4"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          {/* <input
             type="email"
             name="email"
             value={email}
@@ -157,18 +234,28 @@ export function ContactUs() {
               setEmail(e.target.value);
             }}
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-blue-500 font-light text-gray-500"
-          />
+          /> */}
           {errors?.email && (
-            <p className="text-red-500">Email cannot be empty.</p>
+            <p className="mt-2 text-red-500">Please enter a valid email.</p>
           )}
 
           <label
             htmlFor="subject"
             className="text-gray-500 font-light mt-4 dark:text-gray-50"
           >
-            Subject <span className="text-red-500">*</span>
+            Subject <span className="mt-2 text-red-500">*</span>
           </label>
-          <input
+          <TextInput
+            type="text"
+            name="subject"
+            value={subject}
+            placeholder=""
+            className="mt-4"
+            onChange={(e) => {
+              setSubject(e.target.value);
+            }}
+          />
+          {/* <input
             type="text"
             name="subject"
             value={subject}
@@ -176,9 +263,9 @@ export function ContactUs() {
               setSubject(e.target.value);
             }}
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-blue-500 font-light text-gray-500"
-          />
+          /> */}
           {errors?.subject && (
-            <p className="text-red-500">Subject cannot be empty.</p>
+            <p className="mt-2 text-red-500">Subject cannot be empty.</p>
           )}
           <label
             htmlFor="message"
@@ -186,20 +273,53 @@ export function ContactUs() {
           >
             Message <span className="text-red-500">*</span>
           </label>
-          <textarea
+
+          <div
+            className={[
+              'tremor-TextInput-root relative w-full flex items-center min-w-[10rem] outline-none',
+              'rounded-tremor-default shadow-tremor-input dark:shadow-dark-tremor-input',
+              'bg-tremor-background dark:bg-dark-tremor-background hover:bg-tremor-background-muted dark:hover:bg-dark-tremor-background-muted',
+              'text-tremor-content dark:text-dark-tremor-content border mt-4',
+              isFocused
+                ? 'ring border-tremor-brand-subtle ring-tremor-brand-muted dark:border-dark-tremor-brand-subtle dark:ring-dark-tremor-brand-muted'
+                : 'border-tremor-border dark:border-dark-tremor-border',
+            ].join(' ')}
+          >
+            <textarea
+              onClick={() => {
+                handleFocusChange(true);
+              }}
+              onFocus={() => {
+                handleFocusChange(true);
+              }}
+              onBlur={() => {
+                handleFocusChange(false);
+              }}
+              placeholder=""
+              name="message"
+              value={message}
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
+              className="tremor-TextInput-input w-full focus:outline-none focus:ring-0 border-none bg-transparent text-tremor-default text-tremor-content-emphasis dark:text-dark-tremor-content-emphasis pl-4 pr-4 py-2 placeholder:text-tremor-content dark:placeholder:text-dark-tremor-content"
+            ></textarea>
+          </div>
+
+          {/* <textarea
             name="message"
             value={message}
             onChange={(e) => {
               setMessage(e.target.value);
             }}
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-blue-500 font-light text-gray-500"
-          ></textarea>
+          ></textarea> */}
           {errors?.message && (
             <p className="text-red-500">Message body cannot be empty.</p>
           )}
           <div className="flex flex-row items-center justify-start">
             <button
               type="submit"
+              disabled={submitting}
               className="px-10 mt-8 py-2 bg-blue-600 hover:bg-blue-700 text-gray-50 font-light rounded-md text-lg flex flex-row items-center transition duration-150"
             >
               {buttonText}
@@ -207,13 +327,14 @@ export function ContactUs() {
           </div>
           <div className="text-left">
             {showSuccessMessage && (
-              <p className="text-green-500 font-semibold text-sm my-2">
+              <p className="text-green-500 font-semibold text-sm my-2 mt-4">
                 Thank you! Your message has been delivered.
               </p>
             )}
             {showFailureMessage && (
-              <p className="text-red-500">
-                Oops! Something went wrong, please try again.
+              <p className="text-red-500 font-semibold text-sm my-2 mt-4">
+                Oops! Something went wrong, please reload the page and try
+                again.
               </p>
             )}
           </div>
