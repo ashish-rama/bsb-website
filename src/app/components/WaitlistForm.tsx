@@ -20,27 +20,27 @@ export default function WaitlistForm() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [workEmail, setWorkEmail] = useState('');
-  const [personalEmail, setPersonalEmail] = useState('');
+  // const [personalEmail, setPersonalEmail] = useState('');
   const [fundType, setFundType] = useState('');
   const [aumRange, setAumRange] = useState('');
   const [sectorCoverage, setSectorCoverage] = useState('');
   const [industryCoverage, setIndustryCoverage] = useState('');
   const [seniority, setSeniority] = useState('');
   const [teamMembers, setTeamMembers] = useState('');
-  const [historicalBogeyAccuracy, setHistoricalBogeyAccuracy] = useState('');
+  // const [historicalBogeyAccuracy, setHistoricalBogeyAccuracy] = useState('');
 
   type ErrorsType = {
     firstName?: boolean;
     lastName?: boolean;
     workEmail?: boolean;
-    personalEmail?: boolean;
+    // personalEmail?: boolean;
     fundType?: boolean;
     aumRange?: boolean;
     sectorCoverage?: boolean;
     industryCoverage?: boolean;
     seniority?: boolean;
     teamMembers?: boolean;
-    historicalBogeyAccuracy?: boolean;
+    // historicalBogeyAccuracy?: boolean;
   };
 
   //   Form validation
@@ -70,10 +70,10 @@ export default function WaitlistForm() {
     }
 
     // Personal Email
-    if (!personalEmail || !personalEmail.includes('@')) {
-      formIsValid = false;
-      errors['personalEmail'] = true;
-    }
+    // if (!personalEmail || !personalEmail.includes('@')) {
+    //   formIsValid = false;
+    //   errors['personalEmail'] = true;
+    // }
 
     // Fund Type
     if (!fundType) {
@@ -114,10 +114,10 @@ export default function WaitlistForm() {
     // }
 
     // Historical Bogey Accuracy
-    if (!historicalBogeyAccuracy) {
-      formIsValid = false;
-      errors['historicalBogeyAccuracy'] = true;
-    }
+    // if (!historicalBogeyAccuracy) {
+    //   formIsValid = false;
+    //   errors['historicalBogeyAccuracy'] = true;
+    // }
 
     setErrors(errors);
     return formIsValid;
@@ -145,14 +145,14 @@ export default function WaitlistForm() {
           firstName,
           lastName,
           workEmail,
-          personalEmail,
+          // personalEmail,
           fundType,
           aumRange,
           sectorCoverage,
           industryCoverage,
           seniority,
           teamMembers,
-          historicalBogeyAccuracy,
+          // historicalBogeyAccuracy,
         });
 
         if (res) {
@@ -164,14 +164,14 @@ export default function WaitlistForm() {
           setFirstName('');
           setLastName('');
           setWorkEmail('');
-          setPersonalEmail('');
+          // setPersonalEmail('');
           setFundType('');
           setAumRange('');
           setSectorCoverage('');
           setIndustryCoverage('');
           setSeniority('');
           setTeamMembers('');
-          setHistoricalBogeyAccuracy('');
+          // setHistoricalBogeyAccuracy('');
         } else {
           setIsLoading(false);
           setIsSuccess(false);
@@ -332,7 +332,7 @@ export default function WaitlistForm() {
                 />
               </div>
 
-              <div className="flex flex-col w-full">
+              {/* <div className="flex flex-col w-full">
                 <Text className="text-bold mb-2 text-gray-600">
                   Personal Email
                 </Text>
@@ -346,7 +346,7 @@ export default function WaitlistForm() {
                     setPersonalEmail(e.target.value);
                   }}
                 />
-              </div>
+              </div> */}
 
               <div className="flex flex-col w-full">
                 <Text className="text-bold mb-2 text-gray-600">Fund Type</Text>
@@ -438,7 +438,7 @@ export default function WaitlistForm() {
                   name="industryCoverage"
                   error={errors?.industryCoverage}
                   errorMessage="Industry coverage cannot be empty."
-                  placeholder="Software"
+                  placeholder="Sector Verticals"
                   value={industryCoverage}
                   onChange={(e) => {
                     setIndustryCoverage(e.target.value);
@@ -479,13 +479,13 @@ export default function WaitlistForm() {
 
               <div className="flex flex-col w-full">
                 <Text className="text-bold mb-2 text-gray-600">
-                  Team Members
+                  Team Members (optional)
                 </Text>
                 <TextInput
                   name="teamMembers"
                   error={errors?.teamMembers}
                   errorMessage="Team members cannot be empty."
-                  placeholder="Charlie Munger, Bill Gates, ..."
+                  placeholder="Charlie Munger, Ben Graham, ..."
                   value={teamMembers}
                   onChange={(e) => {
                     setTeamMembers(e.target.value);
@@ -493,7 +493,10 @@ export default function WaitlistForm() {
                 />
               </div>
 
-              <div className="flex flex-col w-full">
+              {/* <a href="mailto:someone@yoursite.com?cc=someoneelse@theirsite.com, another@thatsite.com, me@mysite.com&bcc=lastperson@theirsite.com&subject=Big%20News&body=Body-goes-here"> */}
+              {/* <a href="mailto:someone@yoursite.com">Email Us</a> */}
+
+              {/* <div className="flex flex-col w-full">
                 <Text className="text-bold mb-2 text-gray-600">
                   Historical Bogey Accuracy (%)
                 </Text>
@@ -510,7 +513,7 @@ export default function WaitlistForm() {
                     setHistoricalBogeyAccuracy(e.target.value);
                   }}
                 />
-              </div>
+              </div> */}
 
               {/* <Button className="w-full" variant="primary">
                 Secure your spot
