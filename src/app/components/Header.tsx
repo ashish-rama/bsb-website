@@ -2,6 +2,7 @@
 
 import { Popover } from '@headlessui/react';
 import Link from 'next/link';
+import MobileNav from './nav-mobile';
 
 export function Header() {
   return (
@@ -43,6 +44,7 @@ export function Header() {
           </a>
         </div>
         <div className="lg:hidden">
+          <MobileNav />
           <Link href="/">
             <div className="-mt-1">
               <svg
@@ -125,7 +127,8 @@ export function Header() {
       </div>
 
       <div className="relative z-50 lg:hidden flex items-center space-x-4">
-        <Popovers />
+        {/* <Popovers /> */}
+        <MobileNav />
       </div>
     </div>
   );
