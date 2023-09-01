@@ -28,6 +28,7 @@ export default function WaitlistForm() {
   const [seniority, setSeniority] = useState('');
   const [teamMembers, setTeamMembers] = useState('');
   // const [historicalBogeyAccuracy, setHistoricalBogeyAccuracy] = useState('');
+  const [referralCode, setReferralCode] = useState('');
 
   type ErrorsType = {
     firstName?: boolean;
@@ -41,6 +42,7 @@ export default function WaitlistForm() {
     seniority?: boolean;
     teamMembers?: boolean;
     // historicalBogeyAccuracy?: boolean;
+    referralCode?: boolean;
   };
 
   //   Form validation
@@ -119,6 +121,12 @@ export default function WaitlistForm() {
     //   errors['historicalBogeyAccuracy'] = true;
     // }
 
+    // Historical Bogey Accuracy
+    // if (!referralCode) {
+    //   formIsValid = false;
+    //   errors['referralCode'] = true;
+    // }
+
     setErrors(errors);
     return formIsValid;
   };
@@ -153,6 +161,7 @@ export default function WaitlistForm() {
           seniority,
           teamMembers,
           // historicalBogeyAccuracy,
+          referralCode,
         });
 
         if (res) {
@@ -172,6 +181,7 @@ export default function WaitlistForm() {
           setSeniority('');
           setTeamMembers('');
           // setHistoricalBogeyAccuracy('');
+          setReferralCode('');
         } else {
           setIsLoading(false);
           setIsSuccess(false);
@@ -198,6 +208,16 @@ export default function WaitlistForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
+
+  function generateRandomReferralCode(length: number) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let result = '';
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i += 1) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
 
   return (
     <main>
@@ -493,7 +513,22 @@ export default function WaitlistForm() {
                 />
               </div>
 
-              {/* <a href="mailto:someone@yoursite.com?cc=someoneelse@theirsite.com, another@thatsite.com, me@mysite.com&bcc=lastperson@theirsite.com&subject=Big%20News&body=Body-goes-here"> */}
+              <div className="flex flex-col w-full">
+                <Text className="text-bold mb-2 text-gray-600">
+                  Referral Code (optional)
+                </Text>
+                <TextInput
+                  name="referralCode"
+                  error={errors?.referralCode}
+                  errorMessage="Team members cannot be empty."
+                  placeholder="XXXXXX"
+                  value={referralCode}
+                  onChange={(e) => {
+                    setReferralCode(e.target.value);
+                  }}
+                />
+              </div>
+
               {/* <a href="mailto:someone@yoursite.com">Email Us</a> */}
 
               {/* <div className="flex flex-col w-full">
@@ -528,6 +563,35 @@ export default function WaitlistForm() {
               </div>
             </div>
           </form>
+
+          <div
+            className="mx-auto w-full max-w-2xl flex flex-col justify-center items-center"
+            data-aos="fade-down"
+          >
+            <div className="relative w-full">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-scale-700" />
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-2 text-sm bg-scale-200 bg-white text-scale-1200">
+                  or
+                </span>
+              </div>
+            </div>
+            <a
+              className="flex w-full mt-6"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`mailto:?cc=buysidebogey@outlook.com&subject=Sign up for Buyside Bogey with my Referral Code!&body=Hello,%0D%0A%0D%0AI just signed up for Buyside Bogey's waitlist! Sign up with your email and use my referral code below.%0D%0A%0D%0AReferral code: ${generateRandomReferralCode(
+                6
+              )}%0D%0A%0D%0ASign up link: https://www.buysidebogey.com/waitlist`}
+            >
+              <button className="w-full h-14 bg-zinc-800 flex items-center justify-center border border-transparent rounded-lg py-2 px-4 text-base font-medium text-white hover:bg-black focus:ring-2 focus:ring-offset-2 focus:ring-zinc-400 transition-all">
+                Send a Referral
+              </button>
+            </a>
+          </div>
+
           <div className="mx-auto flex w-full max-w-lg justify-center">
             <AnimateHeight
               height={isSuccess ? 'auto' : 0}
