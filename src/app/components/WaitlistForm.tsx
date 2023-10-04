@@ -401,17 +401,11 @@ export default function WaitlistForm() {
                   value={aumRange}
                   onValueChange={setAumRange}
                 >
-                  <SelectItem value="<$50M">{'<$50M'}</SelectItem>
-                  <SelectItem value="$50M - $250M">{'$50M - $250M'}</SelectItem>
-                  <SelectItem value="$250M - $500M">
-                    {'$250M - $500M'}
-                  </SelectItem>
+                  <SelectItem value="<$500M">{'<$500M'}</SelectItem>
                   <SelectItem value="$500M - $1B">{'$500M - $1B'}</SelectItem>
-                  <SelectItem value="$1B - $3B">{'$1B - $3B'}</SelectItem>
-                  <SelectItem value="$3B - $5B">{'$3B - $5B'}</SelectItem>
+                  <SelectItem value="$1B - $5B">{'$1B - $5B'}</SelectItem>
                   <SelectItem value="$5B - $10B">{'$5B - $10B'}</SelectItem>
-                  <SelectItem value="$10B - $20B">{'$10B - $20B'}</SelectItem>
-                  <SelectItem value="$20B+">{'$20B+'}</SelectItem>
+                  <SelectItem value="$10B+">{'$10B+'}</SelectItem>
                 </Select>
 
                 {errors?.aumRange && (
